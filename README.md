@@ -39,6 +39,6 @@ Substitution List (v. 20211007-01)
 \===================================================================================================/
 
 ```
-
+keyword: normalising, normalizing, normalisation, normalization, normalise, normalize 
 (c) Ram Narula
 You can use this information, do give credit: github rambkk - Ram Narula - pluslab.net
