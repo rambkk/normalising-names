@@ -6,6 +6,7 @@ This is an attempt to aid in normalising names, it is not going to be complete a
 However, this information can help in narrowing names down to avoid duplications.
 
 Filter List - These characters should be removed or ignored when storing or checking for duplicates.
+
 Substitution List - These characters should be substituted when storing or checking for duplicates. 
 
 ```
