@@ -2,7 +2,8 @@
 Information to help in normalising names
 
 
-This is an attempt to aid in normalising names, it is not going to be complete as there are countless languages.
+This is an attempt to aid in normalising names, by removing some special characters which are very hard to see or are not actually visible.
+This is not going to be complete list as there are countless languages.
 However, this information can help in narrowing names down to avoid duplications.
 
 Filter List - These characters should be removed or ignored when storing or checking for duplicates.
