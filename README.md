@@ -8,8 +8,8 @@ However, this information can help in narrowing names down to avoid duplications
 Filter List - These characters should be removed or ignored when storing or checking for duplicates.
 Substitution List - These characters should be substituted when storing or checking for duplicates. 
 
-
-Filter List
+```
+Filter List (v. 20211007-01)
 /=================================================\
 |code| UTF-8  | HTML  |          info             |
 |----|--------|-------|---------------------------|
@@ -25,7 +25,7 @@ Filter List
 \=================================================/
 
 
-Substitution List
+Substitution List (v. 20211007-01)
 /===================================================================================================\
 |                    FROM                         |                     TO                          |
 |----|--------|-------|---------------------------|----|--------|-------|---------------------------|
@@ -36,6 +36,8 @@ Substitution List
 |2013|E2 80 93|&ndash;|EN DASH                    |  2D|      2D|       |HYPHEN-MINUS               |
 |    |        |       |                           |    |        |       |                           |
 \===================================================================================================/
+
+```
 
 (c) Ram Narula
 You can use this information, do give credit: github rambkk - Ram Narula - pluslab.net
