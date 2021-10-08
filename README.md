@@ -10,6 +10,10 @@ Filter List - These characters should be removed or ignored when storing or chec
 
 Substitution List - These characters should be substituted when storing or checking for duplicates. 
 
+Substituton (optional) - In some cases removal of diacritical marks might be necessary. There are some rules to be followed.
+Javascript str.normalize("NFD").replace(/\p{Diacritic}/gu, "") seem to do this internally. 
+Other programming languages might need to look up a pre-defined list.
+
 ```
 Filter List (v. 20211007-01)
 /=================================================\
