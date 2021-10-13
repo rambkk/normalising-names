@@ -16,14 +16,14 @@ Javascript:
 Other programming languages might need to look up a pre-defined list.
 
 ```
-Filter List (v. 20211007-01)
+Filter List (v. 20211007-01) [unicode]
 /=================================================\
 |code| UTF-8  | HTML  |          info             |
 |----|--------|-------|---------------------------|
-|    |        |       |*ALL FROM 00 TO 1F         |
+|    |        |       |*ALL FROM U+0000 TO U+001F |
 |    |        |       |                           |
-|  7F|      7F|       |DELETE                     |
-|  AD|   C2 AD|&shy;  |SOFT HYPHEN                |
+|007F|      7F|       |DELETE                     |
+|00AD|   C2 AD|&shy;  |SOFT HYPHEN                |
 |200B|E2 80 8B|       |ZERO WIDTH SPACE           |
 |200C|E2 80 8C|&zwnj; |ZERO WIDTH NON-JOINER      |
 |200D|E2 80 8D|&zwj;  |ZERO WIDTH JOINER          |
@@ -32,22 +32,24 @@ Filter List (v. 20211007-01)
 \=================================================/
 
 
-Substitution List (v. 20211007-01)
+
+
+Substitution List (v. 20211007-01) [unicode]
 /===================================================================================================\
 |                    FROM                         |                     TO                          |
 |----|--------|-------|---------------------------|----|--------|-------|---------------------------|
 |code| UTF-8  | HTML  |           info            |code| UTF-8  | HTML  |           info            |
 |----|--------|-------|---------------------------|----|--------|-------|---------------------------|
 |    |        |       |                           |    |        |       |                           |
-|  A0|   C2 A0|&nbsp; |NO-BREAK SPACE             |  20|      20|       |SPACE                      |
-|2013|E2 80 93|&ndash;|EN DASH                    |  2D|      2D|       |HYPHEN-MINUS               |
+|00A0|   C2 A0|&nbsp; |NO-BREAK SPACE             |0020|      20|       |SPACE                      |
+|2013|E2 80 93|&ndash;|EN DASH                    |002D|      2D|       |HYPHEN-MINUS               |
 |    |        |       |                           |    |        |       |                           |
 \===================================================================================================/
 
 ```
 keyword: normalising, normalizing, normalisation, normalization, normalise, normalize 
 
-Supplementary reading:
+Supplementary reading: 
 https://betterexplained.com/articles/unicode/
 
 (c) Ram Narula
