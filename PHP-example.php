@@ -44,4 +44,4 @@ $replace[2]='-';
 return preg_replace($match,$replace,$string);
 }
 
-~                                       
+?>
