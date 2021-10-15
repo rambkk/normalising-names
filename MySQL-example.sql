@@ -17,13 +17,12 @@
  */ 
 
 
-/* Finding ZERO WIDTH SPACE  */
+/* Steps of the query:
  * 1 - convert the string into hexadecimal digits using HEX()
  * 2 - split the sting into pairs of 2 digits with space using REGEXP_REPLACE ([:xdigit:] matches 0-9,A-F,a-f)
  * 3 - search with REGEXP
- *
  * These  statements do the same thing, just using different styles
- * look for suggested characters which should be filtered
+ * which is to look for suggested characters which should be filtered
  */
  
 SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2,2})",'$1 ') as hex
