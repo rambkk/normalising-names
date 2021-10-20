@@ -51,6 +51,7 @@ keyword: normalising, normalizing, normalisation, normalization, normalise, norm
 
 Supplementary reading: 
 https://betterexplained.com/articles/unicode/
+http://www.unicode.org/Public/UNIDATA/PropList.txt
 
 (c) Ram Narula
 You can use this information, do give credit: github rambkk - Ram Narula - pluslab.net
