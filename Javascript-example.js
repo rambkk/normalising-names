@@ -12,6 +12,6 @@ var myString="hello \u2013\u001F\u200B\u200C\u200D";
 var finalString;
 
 finalString=myString.replace(/[\u0000-\u001F\u007f\u00AD\u200B-\u200D\u3000\uFEFF]/g,'');
-finalString=myString.replace(/\u00AD/,' ');
-finalString=myString.replace(/\u2013/,'-');
+finalString=finalString.replace(/\u00AD/,' ');
+finalString=finalString.replace(/\u2013/,'-');
 
