@@ -37,7 +37,7 @@ SELECT REGEXP_REPLACE(HEX('github rambkk'),"([0-9A-F]{2})(?!$)",'\\1 ') AS hex
  * which is to look for suggested characters which should be filtered
  */
 
-/* assuming the table name is table1 having columns id and column1
+/* assuming MySQL table name is table1 having columns id and column1 */
 SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
 REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2})(?!$)",'$1 ') REGEXP 
 '00|01|02|03|04|05|06|07|08|09|0A|0B|0C|0D|0E|0F|10|11|12|13|14|15|16|17|18|19|1A|1B|1C|1D|1E|1F|7F|C2 AD|E2 80 8B|E2 80 8C|E2 80 8D|E3 80 80|EF BB BF'
