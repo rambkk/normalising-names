@@ -16,6 +16,12 @@
  *     Please drop a note if you find this useful.
  */ 
 
+/* (Testing if the database server can run this properly)
+ * Just format sample data as strings of utf-8 hex with space in between them
+ * The result should be "67-69-74-68-75-62-20-72-61-6D-62-6B-6B"
+ */
+SELECT REGEXP_REPLACE(HEX('github rambkk'),"([0-9A-F]{2})(?!$)",'$1 ') AS hex  
+
 
 /* Steps of the query:
  * 1 - convert the string into hexadecimal digits using HEX()
@@ -24,13 +30,6 @@
  * These  statements do the same thing, just using different styles
  * which is to look for suggested characters which should be filtered
  */
-
-/* (Testing if the database server can run this properly)
- * Just format sample data as strings of utf-8 hex with space in between them
- * The result should be "67-69-74-68-75-62-20-72-61-6D-62-6B-6B"
- */
-SELECT REGEXP_REPLACE(HEX('github rambkk'),"([0-9A-F]{2})(?!$)",'$1 ') AS hex  
-
 
 /* assuming the table name is table1 having columns id and column1
 SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
