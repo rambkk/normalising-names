@@ -8,6 +8,8 @@
  * 
  * Tested on: MySQL 8.0.25
  *
+ * NOTE: for MariaDB users, replace $1 with \\1 in the query string
+ *
  * keyword: normalising, normalizing, normalisation, normalization, normalise, normalize
  * Supplementary reading: https://betterexplained.com/articles/unicode/
  *
@@ -20,7 +22,11 @@
  * Just format sample data as strings of utf-8 hex with space in between them
  * The result should be "67-69-74-68-75-62-20-72-61-6D-62-6B-6B"
  */
-SELECT REGEXP_REPLACE(HEX('github rambkk'),"([0-9A-F]{2})(?!$)",'$1 ') AS hex  
+/* For MySQL 8
+SELECT REGEXP_REPLACE(HEX('github rambkk'),"([0-9A-F]{2})(?!$)",'$1 ') AS hex
+
+/* For MariaDB 10 (sample)
+SELECT REGEXP_REPLACE(HEX('github rambkk'),"([0-9A-F]{2})(?!$)",'\\1 ') AS hex
 
 
 /* Steps of the query:
