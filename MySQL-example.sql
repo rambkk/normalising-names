@@ -24,18 +24,26 @@
  * These  statements do the same thing, just using different styles
  * which is to look for suggested characters which should be filtered
  */
- 
-SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2,2})(?!$)",'$1 ') AS hexFROM table1 WHERE 
-REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2,2})(?!$)",'$1 ') REGEXP 
+
+/* (Testing if the database server can run this properly)
+ * Just format sample data as strings of utf-8 hex with space in between them
+ * The result should be "67-69-74-68-75-62-20-72-61-6D-62-6B-6B"
+ */
+SELECT REGEXP_REPLACE(HEX('github rambkk'),"([0-9A-F]{2})(?!$)",'$1 ') AS hex  
+
+
+/* assuming the table name is table1 having columns id and column1
+SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
+REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2})(?!$)",'$1 ') REGEXP 
 '00|01|02|03|04|05|06|07|08|09|0A|0B|0C|0D|0E|0F|10|11|12|13|14|15|16|17|18|19|1A|1B|1C|1D|1E|1F|7F|C2 AD|E2 80 8B|E2 80 8C|E2 80 8D|E3 80 80|EF BB BF'
 
-SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2,2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
-REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2,2})(?!$)",'$1 ') REGEXP '0[:xdigit:]|1[:xdigit:]|7F|C2 AD|E2 80 8B|E2 80 8C|E2 80 8D|E3 80 80|EF BB BF'
+SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
+REGEXP_REPLACE(HEX(column1),"([[:xdigit:]]{2})(?!$)",'$1 ') REGEXP '0[:xdigit:]|1[:xdigit:]|7F|C2 AD|E2 80 8B|E2 80 8C|E2 80 8D|E3 80 80|EF BB BF'
 
-SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2,2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
-REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2,2})(?!$)",'$1 ') REGEXP '0[0-9A-F]|1[0-9A-F]|7F|C2 AD|E2 80 8B|E2 80 8C|E2 80 8D|E3 80 80|EF BB BF' 
+SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
+REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2})(?!$)",'$1 ') REGEXP '0[0-9A-F]|1[0-9A-F]|7F|C2 AD|E2 80 8B|E2 80 8C|E2 80 8D|E3 80 80|EF BB BF' 
 
-SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2,2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
-REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2,2})(?!$)",'$1 ') REGEXP '[01][0-9A-F]|7F|C2 AD|E2 80 8[BCD]|E3 80 80|EF BB BF' 
+SELECT id,column1,REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2})(?!$)",'$1 ') AS hex FROM table1 WHERE 
+REGEXP_REPLACE(HEX(column1),"([0-9A-F]{2})(?!$)",'$1 ') REGEXP '[01][0-9A-F]|7F|C2 AD|E2 80 8[BCD]|E3 80 80|EF BB BF' 
 
 
